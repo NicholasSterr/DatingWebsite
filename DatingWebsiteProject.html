@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+    <meta charset="UTF-8">
+    <title>DatingWebsite</title>
+    <style type="text/css">
+
+        fieldset{background-color: #ffffde;
+            border:10px solid yellow;
+            width:720px;
+            margin-bottom:10px;}
+
+        label:hover{font-size:20px;}
+
+        label{vertical-align: top;
+            text-align: right;
+             display:inline-block;
+            width:180px;}
+
+        input:hover{font-size:20px;}
+
+        textarea{width: 360px;
+                height:50px;}
+
+        .cbox{text-align:center;
+            display:inline-block;
+            width:auto;}
+
+        .radio{vertical-align: top;
+            text-align:right;
+            display:inline-block;
+            width:auto}
+
+        .range1{background-color: #c30000;
+            color: #ececec;
+            text-align:center;
+            vertical-align: top;
+            display:inline-block;
+            width:50px;}
+
+        .range2{background-color: #018031;
+            color: #ececec;
+            text-align:center;
+            vertical-align: top;
+            display:inline-block;
+            width:50px;}
+
+    </style>
+</head>
+<body>
+
+<h1>Please Enter Your Details For Our Dating Website</h1>
+<fieldset><legend>Your Face</legend>
+
+    <label for="YourImage">Your Image:</label><input id="YourImage" type='file' onchange="readURL (this);"/><br>
+
+    <label for="img">Image Preview:</label><img id="img" src="#" alt="Your Image"/></fieldset>
+
+    <fieldset><legend>Your General Details</legend>
+
+    <label for="name">Name:</label><input id="name" type="text" value="Your full name"> <br>
+
+    <label class="radio1">Gender:</label>
+
+    <label class="radio" for="genderM">Male:</label><input id="genderM" type="radio" value="genderM">
+
+    <label class="radio" for="genderF">Female:</label><input id="genderF" type="radio" value="genderF"><br>
+
+    <label for="age">Age:</label><input id="age" type="number" Value="18" min="18" max="100"><br>
+
+    <label for="dob">Date of Birth:</label><input id="dob" type="date" value="dd/mm/yyyy"><br>
+
+    <label for="color">Favorite Color:</label><input id="color" type="color" value="black"><br>
+
+    <label for="country">Country:</label>
+
+        <select id="country">
+        <option value="united states">United States</option>
+        <option value="canada">Canada</option>
+        <option value="united kingdom">United Kingdom</option>
+        <option value="mexico">Mexico</option>
+        <option value="france">France</option></select></fieldset>
+
+<fieldset><Legend>Your Indicators</Legend>
+    <label  for="height">Height:</label><Label class="range1">Short</Label><input id="height" type="range" value="height" ><label class="range2">Tall</label><br>
+
+    <label  for="wealth">Salary:</label><label class="range1">Poor</label><input id="wealth" type="range" value="wealth" ><label class="range2">Rich</label><br></fieldset>
+
+<fieldset><legend>Your Contact Information</legend>
+    <label for="email">Email:</label><input id="email" type="email" value="Email" required><br>
+
+    <label for="mobile">Mobile:</label><input id="mobile" type="tel" value="Mobile"><br>
+
+    <label for="address">Address:</label><textarea id="address"></textarea><br>
+    
+    <label class="cbox">Prefered Method of Contact:</label>
+
+    <input id="cemail" type="checkbox"  value="Email"><label class="cbox" for="cemail">Email</label>
+
+    <input id="whatsapp" type="checkbox" value="Whatsapp"><label class="cbox" for="whatsapp">Whatsapp</label>
+
+    <input id="inappchat" type="checkbox" value="In-app chat"><label class="cbox" for="inappchat">In-app chat</label></fieldset>
+
+    <input id="submit"  type="submit" value="Submit">
+
+<script type="text/javascript">
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#img')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+</body>
+</html>
